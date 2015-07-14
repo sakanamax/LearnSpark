@@ -1,12 +1,30 @@
 #!/bin/bash
 
+###############################################
+# change log 20150714 - Add sbt install
+#
+#
+###############################################
+
 # Update source
-#echo "\033[32m"
+#echo -e "\033[32m"
 #echo ""
 #echo "==== Start update ===="
 #echo ""
-#echo "\033[33m"
+#echo -e "\033[33m"
 #apt-get   update
+
+
+# Install sbt package
+echo -e "\033[32m"
+echo ""
+echo "==== Install sbt package and repo===="
+echo ""
+echo -e "\033[33m"
+curl   https://bintray.com/sbt/rpm/rpm  >   bintray-sbt-rpm.repo
+sudo  mv  bintray-sbt-rpm.repo   /etc/yum.repos.d/
+sudo  yum  install   sbt   -y
+
 
 # Install java with open jdk
 echo -e "\033[32m"
