@@ -69,6 +69,7 @@ wget    http://www.gtlib.gatech.edu/pub/apache/spark/spark-1.4.0/spark-1.4.0-bin
 # 
 #tar   zxvf   spark-1.4.0-bin-hadoop2.6.tgz
 tar   zxvf   spark-*.tgz
+mv  ~/spark*/  ~/spark/
 
 # Show scala package
 echo -e "\033[32m"
