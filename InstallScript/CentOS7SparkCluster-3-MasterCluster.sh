@@ -2,7 +2,7 @@
 
 ###############################################
 # 20150721 first version by sakana
-#
+# 20150806 fix until
 #
 ###############################################
 
@@ -35,20 +35,26 @@ echo "Your ~/spark/conf/slaves  is `wc -l $HOME/spark/conf/slaves`"
 
 echo -e "\033[33m"
 SLAVEIP='SLAVEIP'
+STOP=''
 
-until [ "$SLAVEIP" = "stop" ]; 
+until [ "$STOP" = "stop" ]; 
 do
+	echo -e "\033[33m"
 	echo "== Let's add Slave SSH public key to ~/.ssh/known_hosts =="
 	echo "== Let's add Slave to ~/spark/conf/slaves=="
 	echo "== Please input your Slave IP, like 10.x.y.z =="
-	echo "== If you finish input your all slaves IP, please input stop  =="
 	read SLAVEIP
+	echo ""
 	echo -e "\033[32m"
 	echo "Your Slave IP is $SLAVEIP"
 	echo "Add $SLAVEIP SSH public key to ~/.ssh/known_hosts"
 	ssh-keyscan  $SLAVEIP  >>  ~/.ssh/known_hosts
 	echo "Add $SLAVEIP to ~/spark/conf/slaves"
 	echo $SLAVEIP  >>  $HOME/spark/conf/slaves
+	echo ""
+	echo -e "\033[31m"
+	echo "== If you finish input your all slaves IP, please input stop, if you want add more slave IP enter anything  =="
+	read STOP
 done
 
 # delete stop in ~/spark/conf/slaves
