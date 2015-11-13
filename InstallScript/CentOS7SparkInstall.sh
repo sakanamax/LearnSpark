@@ -64,7 +64,8 @@ echo ""
 echo "==== Start install Spark with pre-build hadoop  ===="
 echo ""
 echo -e "\033[33m"
-wget    http://www.gtlib.gatech.edu/pub/apache/spark/spark-1.4.0/spark-1.4.0-bin-hadoop2.6.tgz
+# wget    http://www.gtlib.gatech.edu/pub/apache/spark/spark-1.4.0/spark-1.4.0-bin-hadoop2.6.tgz
+wget http://archive.apache.org/dist/spark/spark-1.4.0/spark-1.4.0-bin-hadoop2.6.tgz
 
 # 
 #tar   zxvf   spark-1.4.0-bin-hadoop2.6.tgz
